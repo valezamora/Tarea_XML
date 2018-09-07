@@ -9,15 +9,15 @@
  
 class GestorEtiquetas{
 	private:
-                map<string, int> diccionarioEtiquetas;
+                std::map<std::string, int> diccionarioEtiquetas;
                 //bool salida = 0;
 
 	public:
         GestorEtiquetas();  
         ~GestorEtiquetas(); 
-        bool addEtiqueta(string);
+        bool addEtiqueta(std::string);
         void imprimirEtiquetas();
-        bool extraerContenido(string);	
+        bool extraerContenido(std::string);	
 };
 
 #endif

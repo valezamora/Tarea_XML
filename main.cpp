@@ -3,23 +3,21 @@
 #include "GestorEtiquetas.h"
 using namespace std;
  
-int main()
-{
+int main(int argc, char* argv[] ){
     char* nomArchivo = (char *)"archivo.txt";
     if(argc>1){
 		nomArchivo = argv[1];
 	}
 	
-    GestorArchivos archivo = new GestorArchivos(nomArchivo);
+    GestorArchivos archivo(nomArchivo);
     GestorEtiquetas etiquetas;
 
     bool sigue = 1;
     while(sigue){
         sigue = etiquetas.extraerContenido(archivo.getNextLine());
+        cout << "una linea\n" ;
     }
     etiquetas.imprimirEtiquetas();
-
-    delete archivo;
 
     return 0;
 }
