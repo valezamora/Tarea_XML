@@ -30,10 +30,10 @@ bool GestorEtiquetas::addEtiqueta(string etiqueta){
 /* Metodo que se encarga de imprimir todas las etiquetas y su contador en la línea de comandos
 */
 void GestorEtiquetas::imprimirEtiquetas(){
-    cout << "Etiqueta\tContador" << endl;
+    cout << "Etiquetas:" << endl;
     map<string, int>::iterator itr = diccionarioEtiquetas.begin();
     for(itr = diccionarioEtiquetas.begin(); itr != diccionarioEtiquetas.end(); ++itr){
-        cout << itr->first << "\t" << itr->second << endl;
+        cout << itr->first << ": " << itr->second << endl;
     }
 }
 
@@ -47,8 +47,10 @@ bool GestorEtiquetas::extraerContenido(string linea){
         char c = linea.at(cont);    //primer caracter de la linea
         string temp;
         while(cont < linea.length()){   //no se haya acabado la linea
+	    c = linea.at(cont);
             if(c == '<'){   // si encuentra una etiqueta inicio etiqueta
                 ++cont;     //primer caracter de la etiqueta
+		c = linea.at(cont);
                 while(c != ' ' && c != '>'){    // busca final de etiqueta
                     temp += c ;
                     ++cont;

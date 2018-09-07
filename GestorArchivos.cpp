@@ -15,14 +15,8 @@ GestorArchivos::~ GestorArchivos(){
 }
 
 string GestorArchivos::getNextLine(){
-	char temp = ' ';
 	string linea; 
-	archivoFuente >> temp;
-	while(temp != '\n'){
-		linea += temp;
-		archivoFuente >> temp;
-	}
-    cout << linea << endl;
+	getline(archivoFuente, linea);
     return linea;
 }
 /*
