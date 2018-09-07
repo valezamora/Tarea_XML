@@ -6,13 +6,13 @@
  
 class GestorArchivos{
 	private:
-		fstream archivoFuente;
+		std::fstream archivoFuente;
 
 	public:
 		GestorArchivos(char*);
 		~GestorArchivos();
-		string getNextLine();
-		//int escribirLinea(std::string)
+		std::string getNextLine();
+		int escribirLinea(std::string);
 };
 
 #endif

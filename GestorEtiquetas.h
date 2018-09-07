@@ -17,7 +17,7 @@ class GestorEtiquetas{
         ~GestorEtiquetas(); 
         bool addEtiqueta(std::string);
         void imprimirEtiquetas();
-        bool extraerContenido(std::string);	
+        std::string extraerContenido(std::string);	
 };
 
 #endif

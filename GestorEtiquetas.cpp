@@ -39,7 +39,8 @@ void GestorEtiquetas::imprimirEtiquetas(){
 
 /* Extrae las etiquetas de un string
 */
-bool GestorEtiquetas::extraerContenido(string linea){
+string GestorEtiquetas::extraerContenido(string linea){
+    string salida;
     bool contenido = false;
     if(!linea.empty()){
         contenido = true;
@@ -50,7 +51,7 @@ bool GestorEtiquetas::extraerContenido(string linea){
 	    c = linea.at(cont);
             if(c == '<'){   // si encuentra una etiqueta inicio etiqueta
                 ++cont;     //primer caracter de la etiqueta
-		c = linea.at(cont);
+		        c = linea.at(cont);
                 while(c != ' ' && c != '>'){    // busca final de etiqueta
                     temp += c ;
                     ++cont;
@@ -58,10 +59,12 @@ bool GestorEtiquetas::extraerContenido(string linea){
                 }
                 this->addEtiqueta(temp);
                 temp.clear();
+            }else{
+                salida += c;
             }
             ++cont;
         }
     }
-    return contenido;  
+    return salida;  
 }
 

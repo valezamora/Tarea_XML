@@ -11,7 +11,7 @@ GestorArchivos::GestorArchivos(char* nombre){
 }
 
 GestorArchivos::~ GestorArchivos(){
-
+	archivoFuente.close();
 }
 
 string GestorArchivos::getNextLine(){
@@ -19,8 +19,9 @@ string GestorArchivos::getNextLine(){
 	getline(archivoFuente, linea);
     return linea;
 }
-/*
-int GestorArchivos:escribirLinea(string texto){
-			
+
+
+int GestorArchivos::escribirLinea(string texto){
+	archivoFuente << texto << endl;		
 }
-*/
+

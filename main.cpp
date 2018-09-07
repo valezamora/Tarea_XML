@@ -10,12 +10,14 @@ int main(int argc, char* argv[] ){
 	}
 	
     GestorArchivos archivo(nomArchivo);
+    GestorArchivos salida("archivoSinEtiquetas.txt");
     GestorEtiquetas etiquetas;
 
-    bool sigue = 1;
-    while(sigue){
+    string sigue;
+    do{
         sigue = etiquetas.extraerContenido(archivo.getNextLine());
-    }
+    }while(!sigue.empty());
+    
     etiquetas.imprimirEtiquetas();
 
     return 0;
