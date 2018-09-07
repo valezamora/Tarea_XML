@@ -15,7 +15,6 @@ int main(int argc, char* argv[] ){
     bool sigue = 1;
     while(sigue){
         sigue = etiquetas.extraerContenido(archivo.getNextLine());
-        cout << "una linea\n" ;
     }
     etiquetas.imprimirEtiquetas();
 
