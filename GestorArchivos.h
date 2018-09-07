@@ -9,10 +9,11 @@ class GestorArchivos{
 		std::fstream archivoFuente;
 
 	public:
-		GestorArchivos(char*);
+		GestorArchivos(char*, int);
 		~GestorArchivos();
 		std::string getNextLine();
-		int escribirLinea(std::string);
+		void escribirLinea(std::string);
+		bool fin();
 };
 
 #endif

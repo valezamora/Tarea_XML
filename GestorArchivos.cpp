@@ -6,8 +6,12 @@
 using namespace std;
 
 
-GestorArchivos::GestorArchivos(char* nombre){
+GestorArchivos::GestorArchivos(char* nombre, int tipo){
+	if(tipo == 0){
 	archivoFuente.open(nombre);
+	}else{
+	archivoFuente.open(nombre, fstream::out);			
+	}
 }
 
 GestorArchivos::~ GestorArchivos(){
@@ -21,7 +25,12 @@ string GestorArchivos::getNextLine(){
 }
 
 
-int GestorArchivos::escribirLinea(string texto){
-	archivoFuente << texto << endl;		
+void GestorArchivos::escribirLinea(string texto){
+	archivoFuente << texto << endl;	
+	
+}
+
+bool GestorArchivos::fin(){
+	return archivoFuente.eof();
 }
 

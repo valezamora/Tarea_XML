@@ -1,4 +1,6 @@
  #include <iostream>
+#include <string>
+#include <istream>
 #include "GestorArchivos.h"
 #include "GestorEtiquetas.h"
 using namespace std;
@@ -9,14 +11,17 @@ int main(int argc, char* argv[] ){
 		nomArchivo = argv[1];
 	}
 	
-    GestorArchivos archivo(nomArchivo);
-    GestorArchivos salida("archivoSinEtiquetas.txt");
+    GestorArchivos archivo(nomArchivo, 0);
+    char nombreSalida[] = "archivoSinEtiquetas.txt";
+    GestorArchivos salida(nombreSalida, 1);
     GestorEtiquetas etiquetas;
 
     string sigue;
-    do{
+    while(!archivo.fin()){
         sigue = etiquetas.extraerContenido(archivo.getNextLine());
-    }while(!sigue.empty());
+	
+	salida.escribirLinea(sigue);
+    }
     
     etiquetas.imprimirEtiquetas();
 
