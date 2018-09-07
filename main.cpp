@@ -1,4 +1,10 @@
- #include <iostream>
+/**
+ * Código del main
+ * Tarea 0 - CI1310
+ * Valeria Zamora - B37743
+ * */
+
+#include <iostream>
 #include <string>
 #include <istream>
 #include "GestorArchivos.h"

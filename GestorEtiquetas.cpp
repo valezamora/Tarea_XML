@@ -1,3 +1,11 @@
+/**
+ * Implementación de la clase GestorEtiquetas
+ * Tarea 0 - CI1310
+ * Valeria Zamora - B37743
+ * 
+ * Clase encargada del manejo de las etiquetas
+ * */
+
 #include "GestorEtiquetas.h"
 #include <iostream>
 #include <string>
@@ -5,8 +13,9 @@
 
 using namespace std;
 
-GestorEtiquetas::GestorEtiquetas(){
-}
+/* Constructor de GestorEtiquetas
+*/
+GestorEtiquetas::GestorEtiquetas(){}
 
 GestorEtiquetas::~GestorEtiquetas(){}
 
@@ -38,6 +47,7 @@ void GestorEtiquetas::imprimirEtiquetas(){
 }
 
 /* Extrae las etiquetas de un string
+*  
 */
 string GestorEtiquetas::extraerContenido(string linea){
     string salida;
