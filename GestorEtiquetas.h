@@ -1,21 +1,23 @@
 #ifndef GESTOR_ETIQUETAS
 #define GESTOR_ETIQUETAS
 
-#include<fstream>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <iterator>
+#include <string>
  
 class GestorEtiquetas{
 	private:
-		map<string, int> diccionarioEtiquetas;
-        bool salida = 0;
+                map<string, int> diccionarioEtiquetas;
+                //bool salida = 0;
 
 	public:
-        GestorEtiquetas();   
-        addEtiqueta(string);
-        imprimirEtiquetas();
-        extraerContenido(string);	
+        GestorEtiquetas();  
+        ~GestorEtiquetas(); 
+        bool addEtiqueta(string);
+        void imprimirEtiquetas();
+        bool extraerContenido(string);	
 };
 
 #endif

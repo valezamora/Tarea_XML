@@ -10,7 +10,16 @@ int main()
 		nomArchivo = argv[1];
 	}
 	
-    GestorArchivos archivo(nomArchivo);
+    GestorArchivos archivo = new GestorArchivos(nomArchivo);
     GestorEtiquetas etiquetas;
+
+    bool sigue = 1;
+    while(sigue){
+        sigue = etiquetas.extraerContenido(archivo.getNextLine());
+    }
+    etiquetas.imprimirEtiquetas();
+
+    delete archivo;
+
     return 0;
 }

@@ -12,8 +12,9 @@ class GestorArchivos{
 
 	public:
 		GestorArchivos(char*);
+		~GestorArchivos();
 		string getNextLine();
-		int escribirLinea(string)
+		//int escribirLinea(string)
 
 };
 
