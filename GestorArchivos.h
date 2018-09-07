@@ -3,8 +3,6 @@
 
 #include <fstream>
 #include <string>
-
-using namespace std;
  
 class GestorArchivos{
 	private:
@@ -14,7 +12,7 @@ class GestorArchivos{
 		GestorArchivos(char*);
 		~GestorArchivos();
 		string getNextLine();
-		//int escribirLinea(string)
+		//int escribirLinea(std::string)
 };
 
 #endif
