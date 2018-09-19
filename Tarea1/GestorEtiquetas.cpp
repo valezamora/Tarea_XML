@@ -78,3 +78,18 @@ string GestorEtiquetas::extraerContenido(string linea){
     return salida;  
 }
 
+/* Enviar mensajes con las etiquetas
+*
+*/
+void GestorEtiquetas::enviarEtiquetas(Buzon b, long tipo){
+	map<string, int>::iterator itr = diccionarioEtiquetas.begin();
+
+	struct msgbuf mensaje;
+
+    for(itr = diccionarioEtiquetas.begin(); itr != diccionarioEtiquetas.end(); ++itr){
+		b.Send(itr->second, itr->first , tipo);
+    }
+	
+}
+
+

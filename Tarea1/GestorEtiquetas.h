@@ -14,17 +14,19 @@
 #include <map>
 #include <iterator>
 #include <string>
+#include "Buzon.h"
  
 class GestorEtiquetas{
 	private:
-                std::map<std::string, int> diccionarioEtiquetas;        //almacena las etiquetas
-
+        std::map<std::string, int> diccionarioEtiquetas;        //almacena las etiquetas
+	
 	public:
         GestorEtiquetas();  
         ~GestorEtiquetas(); 
         bool addEtiqueta(std::string);
         void imprimirEtiquetas();
-        std::string extraerContenido(std::string);	
+        std::string extraerContenido(std::string);
+		void enviarEtiquetas(Buzon m);	
 };
 
 #endif
